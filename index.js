@@ -1,7 +1,7 @@
 
 const express = require('express')
 const app = express();
-const port = 8011;
+const port =process.env.PORT|| 8011;
 const fs=require('fs')
 
 app.use(express.json());
