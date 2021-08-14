@@ -1,7 +1,7 @@
 
 const express = require('express')
 const app = express();
-const port = 8010;
+const port = 8011;
 const fs=require('fs')
 
 app.use(express.json());
@@ -12,7 +12,9 @@ app.use(express.json());
  var fileName="./"+d.getDate()+"-"+d.getHours()+".txt";
 
 
- 
+ app.get('/',function(req,res){
+    res.json("Home Page")
+})
 app.get('/createFile', function (req, res) {
     fs.writeFile(fileName,timeStamp,function(err){
              if(err) throw err;   
